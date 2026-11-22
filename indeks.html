@@ -1,17 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SMART SHOP - Toko Online</title>
+<title>INGGRIT STORE - Toko Elektronik</title>
 
 <style>
-
 /* =========================
    1. CSS DASAR
 ========================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -24,629 +22,1049 @@ html {
 }
 
 body {
-    background: #f4f6f9;
-    color: #222;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+button {
+    cursor: pointer;
 }
 
 /* =========================
-   2. HEADER DAN LOGO
+   2. HEADER DAN NAVBAR
 ========================= */
-
 header {
-    background: #102a43;
-    color: white;
-    padding: 18px 8%;
+    background: #ffffff;
+    padding: 17px 0;
+    box-shadow: 0 2px 10px #00000012;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-icon {
-    background: #ff9f1c;
-    padding: 12px 16px;
-    border-radius: 10px;
     font-size: 25px;
     font-weight: bold;
-}
-
-.logo h2 {
-    font-size: 24px;
+    color: #1455d9;
 }
 
 .logo span {
-    color: #ff9f1c;
+    color: #172033;
 }
 
 nav {
     display: flex;
-    gap: 25px;
+    gap: 22px;
 }
 
 nav a {
     text-decoration: none;
-    color: white;
+    color: #172033;
     font-weight: bold;
 }
 
 nav a:hover {
-    color: #ff9f1c;
+    color: #1455d9;
 }
 
-/* =========================
-   3. BANNER PROMOSI
-========================= */
-
-.banner {
-    min-height: 420px;
-
-    background:
-    linear-gradient(
-        rgba(0, 25, 50, 0.75),
-        rgba(0, 25, 50, 0.35)
-    ),
-    url("https://images.unsplash.com/photo-1498049794561-7780e7231661?w=1600")
-    center/cover;
-
-    display: flex;
-    align-items: center;
-    padding: 50px 8%;
+.cart-button {
+    background: #1455d9;
     color: white;
-}
-
-.banner-content {
-    max-width: 550px;
-}
-
-.banner h1 {
-    font-size: 43px;
-    margin-bottom: 20px;
-}
-
-.banner p {
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
-
-.tombol {
-    display: inline-block;
-    background: #ff9f1c;
-    color: white;
-    padding: 14px 25px;
-    text-decoration: none;
-    border-radius: 7px;
+    border: none;
+    padding: 11px 17px;
+    border-radius: 8px;
     font-weight: bold;
 }
 
-.tombol:hover {
-    background: #e68a00;
+/* =========================
+   3. BANNER UTAMA
+========================= */
+.hero {
+    background: linear-gradient(120deg, #102b62, #1765d8);
+    color: white;
+    padding: 75px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #dce8ff;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #1455d9;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 /* =========================
-   4. KATEGORI ELEKTRONIK
+   4. KATEGORI
 ========================= */
+section {
+    padding: 60px 0;
+}
 
-.kategori {
-    padding: 60px 8%;
+.section-title {
     text-align: center;
+    margin-bottom: 35px;
 }
 
-.judul {
+.section-title h2 {
     font-size: 30px;
-    color: #102a43;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-.kategori-card {
+.categories {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+}
+
+.category {
     background: white;
-    max-width: 230px;
-    margin: 25px auto;
-    padding: 30px;
+    padding: 22px 10px;
+    text-align: center;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    cursor: pointer;
+    box-shadow: 0 3px 12px #00000008;
+    transition: .3s;
+    border: 1px solid #e7eaf0;
 }
 
-.kategori-card .icon {
-    font-size: 55px;
-    margin-bottom: 15px;
+.category:hover {
+    background: #1455d9;
+    color: white;
+    transform: translateY(-5px);
 }
 
-.kategori-card h3 {
-    color: #102a43;
+.category .emoji {
+    font-size: 35px;
     margin-bottom: 10px;
 }
 
 /* =========================
-   5. DAFTAR PRODUK
+   5. PRODUK
 ========================= */
-
-.produk {
-    background: #eaf0f6;
-    padding: 60px 8%;
-    text-align: center;
-}
-
-.subtitle {
-    color: #777;
-    margin-bottom: 35px;
-}
-
-.produk-container {
+.products {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
-.produk-card {
+.product {
     background: white;
-    border-radius: 12px;
+    border-radius: 13px;
     overflow: hidden;
-    text-align: left;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    box-shadow: 0 3px 15px #00000010;
+    transition: .3s;
 }
 
-.produk-card:hover {
-    transform: translateY(-7px);
+.product:hover {
+    transform: translateY(-5px);
 }
 
-.produk-card img {
+.product img {
     width: 100%;
-    height: 220px;
+    height: 190px;
     object-fit: cover;
+    background: #edf1f8;
 }
 
-.produk-info {
-    padding: 20px;
+.product-info {
+    padding: 17px;
 }
 
-.produk-info h3 {
-    color: #102a43;
+.product-info h3 {
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    color: #687386;
+    font-size: 14px;
+    line-height: 1.5;
     margin-bottom: 12px;
 }
 
-.produk-info p {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.harga {
-    font-size: 20px;
-    color: #e68a00;
+.price {
+    color: #1455d9;
+    font-size: 19px;
     font-weight: bold;
     margin-bottom: 15px;
 }
 
-.detail-btn {
-    background: #102a43;
+.product button {
+    width: 100%;
+    padding: 11px;
+    background: #1455d9;
     color: white;
-    padding: 11px 20px;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    border-radius: 7px;
+    font-weight: bold;
 }
 
-.detail-btn:hover {
-    background: #ff9f1c;
+.product button:hover {
+    background: #103b9d;
 }
 
 /* =========================
-   6. MODAL DETAIL PRODUK
+   6. PENCARIAN
 ========================= */
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.7);
+.search-box {
+    display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
-    z-index: 100;
+    margin-bottom: 30px;
+    gap: 10px;
 }
 
-.modal-content {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
+.search-box input {
+    width: 60%;
     max-width: 500px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
+    padding: 13px;
+    border: 1px solid #d5dbe7;
+    border-radius: 8px;
+    outline: none;
 }
 
-.modal-content img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
+.search-box input:focus {
+    border-color: #1455d9;
 }
 
-.modal-content h2 {
-    margin-bottom: 12px;
-    color: #102a43;
-}
-
-.modal-content h3 {
-    color: #e68a00;
-    margin-bottom: 15px;
-}
-
-.modal-content p {
-    line-height: 1.7;
-    color: #555;
-}
-
-.close {
-    position: absolute;
-    top: 8px;
-    right: 15px;
-    border: none;
-    background: white;
-    font-size: 30px;
-    cursor: pointer;
+.search-box select {
+    padding: 12px;
+    border: 1px solid #d5dbe7;
+    border-radius: 8px;
 }
 
 /* =========================
-   7. FOOTER
+   7. TENTANG KAMI
 ========================= */
+.about {
+    background: white;
+    text-align: center;
+}
 
+.about p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+    color: #687386;
+}
+
+/* =========================
+   8. KONTAK
+========================= */
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    margin: 10px 0;
+}
+
+/* =========================
+   9. FOOTER
+========================= */
 footer {
-    background: #102a43;
+    background: #101a2d;
     color: white;
     text-align: center;
-    padding: 35px 15px;
-    line-height: 2;
+    padding: 30px 15px;
+}
+
+footer p {
+    color: #cbd5e1;
+    margin-top: 10px;
 }
 
 /* =========================
-   8. RESPONSIVE HP
+   10. KERANJANG BELANJA
 ========================= */
+.cart-panel {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 350px;
+    max-width: 100%;
+    height: 100vh;
+    background: white;
+    padding: 25px;
+    z-index: 200;
+    box-shadow: -5px 0 20px #00000020;
+    overflow-y: auto;
+}
 
-@media (max-width: 768px) {
+.cart-panel.active {
+    display: block;
+}
 
-    header {
-        flex-direction: column;
-        gap: 20px;
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.cart-header button {
+    border: none;
+    background: none;
+    font-size: 25px;
+}
+
+.cart-item {
+    padding: 13px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item button {
+    padding: 5px 9px;
+    margin: 5px 3px;
+    border: none;
+    background: #e9efff;
+    border-radius: 5px;
+}
+
+.cart-total {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+/* =========================
+   11. RESPONSIVE
+========================= */
+@media(max-width: 900px) {
+    .categories {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-text h1 {
+        font-size: 35px;
+    }
+}
+
+@media(max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
     }
 
     nav {
-        flex-wrap: wrap;
+        width: 100%;
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 13px;
     }
 
-    .banner h1 {
-        font-size: 30px;
+    nav a {
+        font-size: 13px;
     }
 
-    .produk-container {
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .hero-image img {
+        height: 220px;
+    }
+
+    .categories {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .products {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .product img {
+        height: 130px;
+    }
+
+    .product-info {
+        padding: 11px;
+    }
+
+    .product-info h3 {
+        font-size: 14px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
 }
-
-@media (max-width: 500px) {
-
-    .produk-container {
-        grid-template-columns: 1fr;
-    }
-
-    .banner {
-        min-height: 350px;
-    }
-
-    .banner h1 {
-        font-size: 27px;
-    }
-}
-
 </style>
 </head>
 
 <body>
 
 <!-- =========================
-     HEADER DAN LOGO
+     HEADER
 ========================= -->
-
 <header>
+    <div class="container navbar">
 
-    <div class="logo">
-        <div class="logo-icon">S</div>
+        <div class="logo">
+            INGGRIT <span>STORE</span>
+        </div>
 
-        <h2>SMART <span>SHOP</span></h2>
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#kategori">Kategori</a>
+            <a href="#produk">Produk</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+
+        <button class="cart-button" onclick="toggleCart()">
+            🛒 Keranjang (<span id="cartCount">0</span>)
+        </button>
+
     </div>
-
-    <nav>
-        <a href="#home">Beranda</a>
-        <a href="#kategori">Kategori</a>
-        <a href="#produk">Produk</a>
-    </nav>
-
 </header>
 
-
 <!-- =========================
-     BANNER PROMOSI
+     BANNER UTAMA
 ========================= -->
+<section class="hero" id="beranda">
+    <div class="container hero-content">
 
-<section class="banner" id="home">
+        <div class="hero-text">
+            <h1>Temukan Teknologi Terbaik untuk Anda</h1>
 
-    <div class="banner-content">
+            <p>
+                Selamat datang di ELEKTRA STORE.
+                Temukan berbagai produk elektronik,
+                komputer, laptop, dan perangkat jaringan
+                dengan mudah dan praktis.
+            </p>
 
-        <h1>
-            Selamat Datang di SMART SHOP
-        </h1>
+            <a href="#produk" class="btn">
+                Belanja Sekarang →
+            </a>
+        </div>
 
-        <p>
-            Temukan berbagai produk elektronik
-            berkualitas dengan harga terbaik.
-            Belanja lebih mudah, cepat, dan nyaman.
-        </p>
-
-        <a href="#produk" class="tombol">
-            Belanja Sekarang
-        </a>
+        <div class="hero-image">
+            <img
+                src="JJJ.jpeg"
+                alt="Produk elektronik">
+        </div>
 
     </div>
-
 </section>
-
 
 <!-- =========================
-     KATEGORI PRODUK
+     KATEGORI
 ========================= -->
+<section id="kategori">
+    <div class="container">
 
-<section class="kategori" id="kategori">
+        <div class="section-title">
+            <h2>Kategori Produk</h2>
+            <p>Pilih kategori sesuai kebutuhan Anda</p>
+        </div>
 
-    <h2 class="judul">Kategori Produk</h2>
+        <div class="categories">
 
-    <div class="kategori-card">
+            <div class="category" onclick="filterCategory('Laptop')">
+                <div class="emoji">💻</div>
+                <h4>Laptop</h4>
+            </div>
 
-        <div class="icon">📱</div>
+            <div class="category" onclick="filterCategory('Smartphone')">
+                <div class="emoji">📱</div>
+                <h4>Smartphone</h4>
+            </div>
 
-        <h3>Elektronik</h3>
+            <div class="category" onclick="filterCategory('Komputer')">
+                <div class="emoji">🖥️</div>
+                <h4>Komputer</h4>
+            </div>
 
-        <p>
-            Berbagai pilihan perangkat
-            elektronik untuk kebutuhan Anda.
-        </p>
+            <div class="category" onclick="filterCategory('Aksesori Komputer')">
+                <div class="emoji">⌨️</div>
+                <h4>Aksesori</h4>
+            </div>
 
+            <div class="category" onclick="filterCategory('Perangkat Jaringan')">
+                <div class="emoji">📡</div>
+                <h4>Jaringan</h4>
+            </div>
+
+            <div class="category" onclick="filterCategory('Peralatan Elektronik')">
+                <div class="emoji">🎧</div>
+                <h4>Elektronik</h4>
+            </div>
+
+        </div>
     </div>
-
 </section>
-
 
 <!-- =========================
      DAFTAR PRODUK
 ========================= -->
+<section id="produk">
+    <div class="container">
 
-<section class="produk" id="produk">
+        <div class="section-title">
+            <h2>Produk Unggulan</h2>
+            <p>Produk elektronik pilihan ELEKTRA STORE</p>
+        </div>
 
-    <h2 class="judul">Produk Elektronik</h2>
+        <div class="search-box">
 
-    <p class="subtitle">
-        Pilihan produk terbaik SMART SHOP
-    </p>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Cari nama produk..."
+                oninput="searchProduct()">
 
-    <div class="produk-container" id="produkContainer">
+            <select id="sortPrice" onchange="searchProduct()">
+                <option value="default">Urutkan Harga</option>
+                <option value="low">Termurah</option>
+                <option value="high">Termahal</option>
+            </select>
+
+        </div>
+
+        <div class="products" id="productList"></div>
+
+    </div>
+</section>
+
+<!-- =========================
+     TENTANG KAMI
+========================= -->
+<section class="about" id="tentang">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Tentang ELEKTRA STORE</h2>
+        </div>
+
+        <p>
+            ELEKTRA STORE merupakan toko elektronik online
+            yang menyediakan berbagai kebutuhan teknologi,
+            mulai dari laptop, komputer, smartphone,
+            aksesori komputer, hingga perangkat jaringan.
+            Kami berkomitmen memberikan pelayanan yang
+            mudah, nyaman, dan informatif bagi pelanggan.
+        </p>
 
     </div>
 
 </section>
 
-
 <!-- =========================
-     MODAL DETAIL PRODUK
+     KONTAK
 ========================= -->
+<section class="contact" id="kontak">
 
-<div class="modal" id="modal">
+    <div class="container">
 
-    <div class="modal-content">
+        <div class="section-title">
+            <h2>Hubungi Kami</h2>
+            <p>Silakan hubungi kami untuk informasi produk</p>
+        </div>
 
-        <button class="close" onclick="tutupDetail()">
-            &times;
-        </button>
-
-        <img id="detailFoto" src="" alt="Foto produk">
-
-        <h2 id="detailNama"></h2>
-
-        <h3 id="detailHarga"></h3>
-
-        <p id="detailDeskripsi"></p>
+        <p>📍 Makassar, Sulawesi Selatan</p>
+        <p>📱 WhatsApp: 082291451983 (contoh)</p>
+        <p>✉️ Email: halo@elektrastore.example (contoh)</p>
+        <p>HP : 082291451983 (INGGRIT)</p>
 
     </div>
 
-</div>
-
+</section>
 
 <!-- =========================
      FOOTER
 ========================= -->
-
 <footer>
 
-    <h3>SMART SHOP</h3>
-
-    <p>Toko Online Elektronik Pilihan Anda</p>
+    <h2>ELEKTRA STORE</h2>
 
     <p>
-        &copy; SMKN 1 LUWU UTARA --
-        Teknik Komputer Dan Jaringan.
+        Your Technology Partner
+    </p>
+
+    <p>
+        © <span id="year"></span> ELEKTRA STORE.
+        Seluruh Hak Cipta Dilindungi.
     </p>
 
 </footer>
 
-
 <!-- =========================
-     JAVASCRIPT
+     PANEL KERANJANG
 ========================= -->
+<div class="cart-panel" id="cartPanel">
+
+    <div class="cart-header">
+        <h2>Keranjang Belanja</h2>
+        <button onclick="toggleCart()">×</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+        Total: <span id="totalPrice">Rp0</span>
+    </div>
+
+    <button class="cart-button"
+        style="width:100%; margin-top:20px"
+        onclick="checkout()">
+        Lanjutkan Pemesanan
+    </button>
+
+</div>
 
 <script>
+/* =========================
+   1. DATA PRODUK
+========================= */
 
-// DATA PRODUK ELEKTRONIK
-
-const daftarProduk = [
-
+const products = [
     {
-        nama: "Laptop ASUS VivoBook",
-
-        harga: "Rp7.500.000",
-
-        foto: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700",
-
-        deskripsi: "Laptop ASUS VivoBook merupakan komputer portabel dengan desain modern. Perangkat ini cocok digunakan untuk kegiatan belajar, pekerjaan kantor, mengolah dokumen, mengakses internet, dan aktivitas sehari-hari."
+        id: 1,
+        name: "Laptop ASUS VivoBook",
+        category: "Laptop",
+        price: 7500000,
+        description: "Laptop untuk belajar dan bekerja.",
+        image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600"
     },
-
     {
-        nama: "Smartphone Samsung",
-
-        harga: "Rp3.500.000",
-
-        foto: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=700",
-
-        deskripsi: "Smartphone Samsung merupakan perangkat komunikasi modern yang dilengkapi layar digital, kamera, konektivitas internet, serta berbagai aplikasi untuk mendukung kebutuhan komunikasi dan hiburan."
+        id: 2,
+        name: "Laptop Lenovo IdeaPad",
+        category: "Laptop",
+        price: 6800000,
+        description: "Laptop praktis untuk aktivitas harian.",
+        image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600"
     },
-
     {
-        nama: "Headphone Wireless",
-
-        harga: "Rp450.000",
-
-        foto: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=700",
-
-        deskripsi: "Headphone wireless adalah perangkat audio tanpa kabel yang dapat dihubungkan dengan smartphone, laptop, atau perangkat lainnya. Cocok untuk mendengarkan musik, belajar, dan mengikuti pertemuan online."
+        id: 3,
+        name: "Smartphone Samsung",
+        category: "Smartphone",
+        price: 4200000,
+        description: "Smartphone untuk kebutuhan digital.",
+        image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600"
     },
-
     {
-        nama: "Kamera Digital",
-
-        harga: "Rp5.200.000",
-
-        foto: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=700",
-
-        deskripsi: "Kamera digital digunakan untuk mengambil foto dan merekam video. Perangkat ini cocok untuk dokumentasi kegiatan, fotografi, pembuatan konten, dan kebutuhan pekerjaan kreatif."
+        id: 4,
+        name: "Desktop PC",
+        category: "Komputer",
+        price: 8500000,
+        description: "Komputer desktop untuk produktivitas.",
+        image: "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=600"
     },
-
     {
-        nama: "Smartwatch",
-
-        harga: "Rp850.000",
-
-        foto: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700",
-
-        deskripsi: "Smartwatch merupakan jam tangan pintar yang memiliki berbagai fitur digital seperti notifikasi pesan, penunjuk waktu, pemantauan aktivitas, dan konektivitas dengan smartphone."
+        id: 5,
+        name: "Mouse Wireless",
+        category: "Aksesori Komputer",
+        price: 150000,
+        description: "Mouse wireless praktis dan nyaman.",
+        image: "https://images.unsplash.com/photo-1527814050087-3793815479db?w=600"
     },
-
     {
-        nama: "Speaker Bluetooth",
-
-        harga: "Rp350.000",
-
-        foto: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=700",
-
-        deskripsi: "Speaker Bluetooth merupakan perangkat audio nirkabel yang dapat terhubung dengan smartphone, laptop, dan perangkat lainnya. Digunakan untuk mendengarkan musik dan berbagai kebutuhan audio."
+        id: 6,
+        name: "Keyboard Gaming",
+        category: "Aksesori Komputer",
+        price: 350000,
+        description: "Keyboard untuk mengetik dan gaming.",
+        image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600"
+    },
+    {
+        id: 7,
+        name: "Router MikroTik",
+        category: "Perangkat Jaringan",
+        price: 650000,
+        description: "Router untuk jaringan komputer.",
+        image: "https://images.unsplash.com/photo-1647427060118-4911c9821b82?w=600"
+    },
+    {
+        id: 8,
+        name: "Access Point",
+        category: "Perangkat Jaringan",
+        price: 500000,
+        description: "Perangkat pemancar jaringan wireless.",
+        image: "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=600"
+    },
+    {
+        id: 9,
+        name: "Switch Network",
+        category: "Perangkat Jaringan",
+        price: 400000,
+        description: "Perangkat penghubung jaringan LAN.",
+        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600"
+    },
+    {
+        id: 10,
+        name: "Headphone Wireless",
+        category: "Peralatan Elektronik",
+        price: 300000,
+        description: "Headphone untuk kebutuhan audio.",
+        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600"
     }
-
 ];
 
 
-// MENAMPILKAN PRODUK KE WEBSITE
+/* =========================
+   2. FORMAT HARGA RUPIAH
+========================= */
 
-const container = document.getElementById("produkContainer");
+function rupiah(number) {
+    return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0
+    }).format(number);
+}
 
-daftarProduk.forEach((produk, index) => {
 
-    container.innerHTML += `
+/* =========================
+   3. MENAMPILKAN PRODUK
+========================= */
 
-        <div class="produk-card">
+function displayProducts(data) {
 
-            <img
-                src="${produk.foto}"
-                alt="${produk.nama}"
-                loading="lazy"
-            >
+    const productList = document.getElementById("productList");
 
-            <div class="produk-info">
+    if (data.length === 0) {
+        productList.innerHTML = "<p>Produk tidak ditemukan.</p>";
+        return;
+    }
 
-                <h3>${produk.nama}</h3>
+    productList.innerHTML = "";
 
-                <p>
-                    ${produk.deskripsi.substring(0, 90)}...
-                </p>
+    data.forEach(product => {
 
-                <div class="harga">
-                    ${produk.harga}
+        productList.innerHTML += `
+            <div class="product">
+
+                <img src="${product.image}"
+                     alt="${product.name}"
+                     onerror="this.src='https://placehold.co/600x400?text=ELEKTRA+STORE'">
+
+                <div class="product-info">
+
+                    <h3>${product.name}</h3>
+
+                    <p>${product.description}</p>
+
+                    <div class="price">
+                        ${rupiah(product.price)}
+                    </div>
+
+                    <button onclick="addToCart(${product.id})">
+                        + Tambah ke Keranjang
+                    </button>
+
                 </div>
+            </div>
+        `;
 
-                <button
-                    class="detail-btn"
-                    onclick="lihatDetail(${index})"
-                >
-                    Lihat Detail
+    });
+
+}
+
+
+/* =========================
+   4. PENCARIAN PRODUK
+========================= */
+
+function searchProduct() {
+
+    const keyword = document
+        .getElementById("searchInput")
+        .value.toLowerCase();
+
+    const sort = document.getElementById("sortPrice").value;
+
+    let filtered = products.filter(product =>
+
+        product.name.toLowerCase().includes(keyword) ||
+        product.category.toLowerCase().includes(keyword)
+
+    );
+
+    if (sort === "low") {
+        filtered.sort((a, b) => a.price - b.price);
+    }
+
+    if (sort === "high") {
+        filtered.sort((a, b) => b.price - a.price);
+    }
+
+    displayProducts(filtered);
+
+}
+
+
+/* =========================
+   5. FILTER KATEGORI
+========================= */
+
+function filterCategory(category) {
+
+    const filtered = products.filter(product =>
+        product.category === category
+    );
+
+    document.getElementById("searchInput").value = "";
+    document.getElementById("sortPrice").value = "default";
+
+    displayProducts(filtered);
+
+    document.getElementById("produk").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =========================
+   6. DATA KERANJANG
+========================= */
+
+let cart = [];
+
+try {
+    cart = JSON.parse(localStorage.getItem("elektraCart")) || [];
+    if (!Array.isArray(cart)) cart = [];
+} catch (error) {
+    cart = [];
+}
+
+
+/* =========================
+   7. TAMBAH PRODUK
+========================= */
+
+function addToCart(id) {
+
+    const item = cart.find(product => product.id === id);
+
+    if (item) {
+        item.quantity++;
+    } else {
+        cart.push({
+            id: id,
+            quantity: 1
+        });
+    }
+
+    updateCart();
+
+    alert("Produk berhasil ditambahkan!");
+
+}
+
+
+/* =========================
+   8. MENAMPILKAN KERANJANG
+========================= */
+
+function updateCart() {
+
+    cart = cart.filter(item =>
+        products.some(product => product.id === item.id)
+    );
+
+    localStorage.setItem("elektraCart", JSON.stringify(cart));
+
+    const cartItems = document.getElementById("cartItems");
+
+    let total = 0;
+    let count = 0;
+
+    cartItems.innerHTML = "";
+
+    cart.forEach(item => {
+
+        const product = products.find(p => p.id === item.id);
+
+        total += product.price * item.quantity;
+        count += item.quantity;
+
+        cartItems.innerHTML += `
+
+            <div class="cart-item">
+
+                <h4>${product.name}</h4>
+
+                <p>${rupiah(product.price)}</p>
+
+                <p>Jumlah: ${item.quantity}</p>
+
+                <button onclick="changeQuantity(${item.id}, -1)">
+                    -
+                </button>
+
+                <button onclick="changeQuantity(${item.id}, 1)">
+                    +
+                </button>
+
+                <button onclick="removeFromCart(${item.id})">
+                    Hapus
                 </button>
 
             </div>
 
-        </div>
+        `;
 
-    `;
+    });
 
-});
+    if (cart.length === 0) {
+        cartItems.innerHTML = "<p>Keranjang masih kosong.</p>";
+    }
 
+    document.getElementById("cartCount").textContent = count;
 
-// FUNGSI MELIHAT DETAIL PRODUK
-
-function lihatDetail(index) {
-
-    const produk = daftarProduk[index];
-
-    document.getElementById("detailFoto").src =
-        produk.foto;
-
-    document.getElementById("detailNama").textContent =
-        produk.nama;
-
-    document.getElementById("detailHarga").textContent =
-        produk.harga;
-
-    document.getElementById("detailDeskripsi").textContent =
-        produk.deskripsi;
-
-    document.getElementById("modal").style.display = "flex";
+    document.getElementById("totalPrice").textContent = rupiah(total);
 
 }
 
 
-// FUNGSI MENUTUP DETAIL PRODUK
+/* =========================
+   9. UBAH JUMLAH PRODUK
+========================= */
 
-function tutupDetail() {
+function changeQuantity(id, change) {
 
-    document.getElementById("modal").style.display = "none";
+    const item = cart.find(product => product.id === id);
+
+    if (!item) return;
+
+    item.quantity += change;
+
+    if (item.quantity <= 0) {
+        removeFromCart(id);
+        return;
+    }
+
+    updateCart();
 
 }
 
 
-// MENUTUP MODAL DENGAN KLIK DI LUAR KOTAK
+/* =========================
+   10. HAPUS PRODUK
+========================= */
 
-document.getElementById("modal").addEventListener("click", function(event) {
+function removeFromCart(id) {
 
-    if (event.target === this) {
+    cart = cart.filter(product => product.id !== id);
 
-        tutupDetail();
+    updateCart();
+
+}
+
+
+/* =========================
+   11. BUKA / TUTUP KERANJANG
+========================= */
+
+function toggleCart() {
+
+    document
+        .getElementById("cartPanel")
+        .classList.toggle("active");
+
+}
+
+
+/* =========================
+   12. PEMESANAN DEMO
+========================= */
+
+function checkout() {
+
+    if (cart.length === 0) {
+
+        alert("Keranjang belanja masih kosong!");
+
+        return;
 
     }
 
-});
+    alert(
+        "Pemesanan demo berhasil diproses. " +
+        "Website ini belum terhubung dengan sistem pembayaran."
+    );
+
+}
+
+
+/* =========================
+   13. TAHUN OTOMATIS
+========================= */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* =========================
+   14. MENJALANKAN WEBSITE
+========================= */
+
+displayProducts(products);
+updateCart();
 
 </script>
 
